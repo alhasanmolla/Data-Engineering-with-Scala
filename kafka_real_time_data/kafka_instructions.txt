@@ -1,0 +1,48 @@
+Kafka Topic তৈরি করার Bangla Example
+তুমি যদি Kafka-তে একটি নতুন Topic তৈরি করতে চাও, তাহলে নিচের কমান্ড ব্যবহার করতে পারো:
+
+bash
+bin/kafka-topics.sh --create --topic user_activities --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
+
+এই উদাহরণটি কী বোঝায়?
+Topic Name:
+user_activities নামে একটি নতুন Topic তৈরি হবে।
+এটি হলো ডেটার ক্যাটাগরি যেখানে প্রোডিউসার ডেটা পাঠাবে এবং কনজিউমার ডেটা গ্রহণ করবে।
+
+Partitions:
+--partitions 3 দ্বারা Topic-এর মধ্যে ৩টি Partition থাকবে।
+Partition হলো ডেটা বিভক্ত করার উপায়, যা Kafka-এর মধ্যে parallelism এবং scalability নিশ্চিত করে।
+
+Replication Factor:
+--replication-factor 1 দ্বারা বোঝানো হয়েছে, প্রতিটি Partition-এর জন্য একটি মাত্র রেপ্লিকা থাকবে।
+Replication Factor হলো ডেটা নিরাপত্তার জন্য একটি Backup কপি রাখা। যদি একটি Broker নষ্ট হয়, অন্য একটি রেপ্লিকা থেকে ডেটা পাওয়া যায়।
+
+Bootstrap Server:
+--bootstrap-server localhost:9092 দ্বারা Kafka সার্ভারের ঠিকানা নির্দিষ্ট করা হয়েছে।
+
+Kafka Topic তৈরি করার সম্পূর্ণ প্রক্রিয়া (Step-by-Step)
+1. Zookeeper চালু করো:
+   bash
+   bin/zookeeper-server-start.sh config/zookeeper.properties
+
+2. Kafka Broker চালু করো:
+   bash
+   bin/kafka-server-start.sh config/server.properties
+
+3. Topic তৈরি করো:
+   bash
+   bin/kafka-topics.sh --create --topic user_activities --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
+
+4. Topic তালিকা চেক করো:
+   bash
+   bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+এটি তোমার তৈরি করা সব Topic-এর নাম দেখাবে।
+
+বাংলায় উপদেশ
+পার্টিশন (Partitions):
+যদি ডেটার পরিমাণ বেশি হয়, তাহলে বেশি পার্টিশন ব্যবহার করো।
+উদাহরণ: --partitions 5
+
+রেপ্লিকেশন ফ্যাক্টর (Replication Factor):
+যদি তুমি একটি প্রোডাকশন পরিবেশে কাজ করো, --replication-factor কমপক্ষে 3 রাখো।
