@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: sales_summary
+    description: "Aggregated monthly sales data"
+    columns:
+      - name: sale_month
+        description: "Month of the sale"
+      - name: total_sales
+        description: "Total sales amount for the month"

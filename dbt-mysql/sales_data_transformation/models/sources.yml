@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: sales_data
+    description: "Sales data from MySQL database"
+    tables:
+      - name: sales
+        description: "Table containing sales transactions"

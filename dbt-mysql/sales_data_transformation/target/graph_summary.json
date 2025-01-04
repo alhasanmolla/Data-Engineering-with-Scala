@@ -1,0 +1,1 @@
+{"_invocation_id": "0f4fcbdc-3e52-4a21-95df-c0374eeb1a9f", "linked": {"0": {"name": "source.sales_data_transformation.sales_data.sales", "type": "source"}, "1": {"name": "model.sales_data_transformation.sales_summary", "type": "model"}}}

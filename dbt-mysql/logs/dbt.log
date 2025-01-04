@@ -1,0 +1,508 @@
+[0m17:11:21.219386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C553C74090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C5538C1C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C5538C1CD0>]}
+
+
+============================== 17:11:21.226235 | f3cc9598-be83-41a2-8fb7-b5434ba188da ==============================
+[0m17:11:21.226235 [info ] [MainThread]: Running with dbt=1.7.18
+[0m17:11:21.228234 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Hasan\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt init', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m17:11:42.974790 [debug] [MainThread]: Starter project path: E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\include\starter_project
+[0m17:11:43.045836 [info ] [MainThread]: 
+Your new dbt project "sqlpro" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:11:43.046835 [info ] [MainThread]: Setting up your profile.
+[0m17:11:43.048834 [error] [MainThread]: Encountered an error:
+'charmap' codec can't decode byte 0x8d in position 313: character maps to <undefined>
+[0m17:11:43.067822 [error] [MainThread]: Traceback (most recent call last):
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\main.py", line 516, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 344, in run
+    self.setup_profile(profile_name)
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 250, in setup_profile
+    if not self.check_if_can_write_profile(profile_name=profile_name):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 211, in check_if_can_write_profile
+    profiles = yaml.safe_load(f) or {}
+               ^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\__init__.py", line 79, in load
+    loader = Loader(stream)
+             ^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\loader.py", line 34, in __init__
+    Reader.__init__(self, stream)
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 85, in __init__
+    self.determine_encoding()
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 124, in determine_encoding
+    self.update_raw()
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 178, in update_raw
+    data = self.stream.read(size)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x8d in position 313: character maps to <undefined>
+
+[0m17:11:43.070820 [debug] [MainThread]: Command `dbt init` failed at 17:11:43.069821 after 21.96 seconds
+[0m17:11:43.070820 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C553C67150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C55307C450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C54D13ABD0>]}
+[0m17:11:43.071821 [debug] [MainThread]: Flushing usage events
+[0m17:12:31.920301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022B6505DB50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022B64C49B50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022B65034D90>]}
+
+
+============================== 17:12:31.926301 | 30383625-511d-4e8d-bfbb-93f8dddbca0a ==============================
+[0m17:12:31.926301 [info ] [MainThread]: Running with dbt=1.7.18
+[0m17:12:31.928300 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Hasan\\.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt init', 'send_anonymous_usage_stats': 'True'}
+[0m17:13:07.733778 [debug] [MainThread]: Starter project path: E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\include\starter_project
+[0m17:13:07.755768 [info ] [MainThread]: 
+Your new dbt project "sql" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:13:07.756766 [info ] [MainThread]: Setting up your profile.
+[0m17:13:07.757766 [error] [MainThread]: Encountered an error:
+'charmap' codec can't decode byte 0x8d in position 313: character maps to <undefined>
+[0m17:13:07.762764 [error] [MainThread]: Traceback (most recent call last):
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\main.py", line 516, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 344, in run
+    self.setup_profile(profile_name)
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 250, in setup_profile
+    if not self.check_if_can_write_profile(profile_name=profile_name):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 211, in check_if_can_write_profile
+    profiles = yaml.safe_load(f) or {}
+               ^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\__init__.py", line 79, in load
+    loader = Loader(stream)
+             ^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\loader.py", line 34, in __init__
+    Reader.__init__(self, stream)
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 85, in __init__
+    self.determine_encoding()
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 124, in determine_encoding
+    self.update_raw()
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 178, in update_raw
+    data = self.stream.read(size)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x8d in position 313: character maps to <undefined>
+
+[0m17:13:07.765761 [debug] [MainThread]: Command `dbt init` failed at 17:13:07.765761 after 35.94 seconds
+[0m17:13:07.766761 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022B65016990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022B64442BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022B5E519ED0>]}
+[0m17:13:07.767760 [debug] [MainThread]: Flushing usage events
+[0m17:13:16.060201 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B52CA547D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B52C48BB10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B52CA33090>]}
+
+
+============================== 17:13:16.066198 | 81ccaeb8-1fb2-4282-b853-f73b7153bfc3 ==============================
+[0m17:13:16.066198 [info ] [MainThread]: Running with dbt=1.7.18
+[0m17:13:16.067196 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Hasan\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:14:55.964348 [debug] [MainThread]: Starter project path: E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\include\starter_project
+[0m17:14:55.985084 [info ] [MainThread]: 
+Your new dbt project "mysql" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:14:55.986084 [info ] [MainThread]: Setting up your profile.
+[0m17:14:55.988082 [error] [MainThread]: Encountered an error:
+'charmap' codec can't decode byte 0x8d in position 313: character maps to <undefined>
+[0m17:14:55.991583 [error] [MainThread]: Traceback (most recent call last):
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\main.py", line 516, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 344, in run
+    self.setup_profile(profile_name)
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 250, in setup_profile
+    if not self.check_if_can_write_profile(profile_name=profile_name):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 211, in check_if_can_write_profile
+    profiles = yaml.safe_load(f) or {}
+               ^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\__init__.py", line 79, in load
+    loader = Loader(stream)
+             ^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\loader.py", line 34, in __init__
+    Reader.__init__(self, stream)
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 85, in __init__
+    self.determine_encoding()
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 124, in determine_encoding
+    self.update_raw()
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 178, in update_raw
+    data = self.stream.read(size)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x8d in position 313: character maps to <undefined>
+
+[0m17:14:55.994709 [debug] [MainThread]: Command `dbt init` failed at 17:14:55.994709 after 100.02 seconds
+[0m17:14:55.995708 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B52CA89250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B52CA91F10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B525EDAC10>]}
+[0m17:14:55.996707 [debug] [MainThread]: Flushing usage events
+[0m17:15:04.804010 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002186A8C58D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002186A8E7C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000218694FE210>]}
+
+
+============================== 17:15:04.811006 | 00429b95-ee52-4ce9-8caf-c903d9f26017 ==============================
+[0m17:15:04.811006 [info ] [MainThread]: Running with dbt=1.7.18
+[0m17:15:04.812823 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Hasan\\.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt init', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:16:24.867283 [debug] [MainThread]: Starter project path: E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\include\starter_project
+[0m17:16:24.892503 [info ] [MainThread]: 
+Your new dbt project "my_sql" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:16:24.893503 [info ] [MainThread]: Setting up your profile.
+[0m17:16:24.895502 [error] [MainThread]: Encountered an error:
+'charmap' codec can't decode byte 0x8d in position 313: character maps to <undefined>
+[0m17:16:24.899499 [error] [MainThread]: Traceback (most recent call last):
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\main.py", line 516, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 344, in run
+    self.setup_profile(profile_name)
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 250, in setup_profile
+    if not self.check_if_can_write_profile(profile_name=profile_name):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 211, in check_if_can_write_profile
+    profiles = yaml.safe_load(f) or {}
+               ^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\__init__.py", line 79, in load
+    loader = Loader(stream)
+             ^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\loader.py", line 34, in __init__
+    Reader.__init__(self, stream)
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 85, in __init__
+    self.determine_encoding()
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 124, in determine_encoding
+    self.update_raw()
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 178, in update_raw
+    data = self.stream.read(size)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x8d in position 313: character maps to <undefined>
+
+[0m17:16:24.902702 [debug] [MainThread]: Command `dbt init` failed at 17:16:24.902702 after 80.19 seconds
+[0m17:16:24.903700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000218696572D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002186A8D4250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002186A8D5F90>]}
+[0m17:16:24.904699 [debug] [MainThread]: Flushing usage events
+[0m17:17:03.399810 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FEABA53C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FEABA40DD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FEABA51E10>]}
+
+
+============================== 17:17:03.405806 | 2200564d-3a19-471c-93ba-e9152b96ef6a ==============================
+[0m17:17:03.405806 [info ] [MainThread]: Running with dbt=1.7.18
+[0m17:17:03.407804 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Hasan\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt init', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:17:43.218418 [debug] [MainThread]: Starter project path: E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\include\starter_project
+[0m17:17:43.240404 [info ] [MainThread]: 
+Your new dbt project "my_dbt_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:17:43.241404 [info ] [MainThread]: Setting up your profile.
+[0m17:17:43.242402 [error] [MainThread]: Encountered an error:
+'charmap' codec can't decode byte 0x8d in position 313: character maps to <undefined>
+[0m17:17:43.247400 [error] [MainThread]: Traceback (most recent call last):
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\main.py", line 516, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 344, in run
+    self.setup_profile(profile_name)
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 250, in setup_profile
+    if not self.check_if_can_write_profile(profile_name=profile_name):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 211, in check_if_can_write_profile
+    profiles = yaml.safe_load(f) or {}
+               ^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\__init__.py", line 79, in load
+    loader = Loader(stream)
+             ^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\loader.py", line 34, in __init__
+    Reader.__init__(self, stream)
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 85, in __init__
+    self.determine_encoding()
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 124, in determine_encoding
+    self.update_raw()
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 178, in update_raw
+    data = self.stream.read(size)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x8d in position 313: character maps to <undefined>
+
+[0m17:17:43.249399 [debug] [MainThread]: Command `dbt init` failed at 17:17:43.249399 after 39.94 seconds
+[0m17:17:43.250398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FEAA7B72D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FEABA81FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FEABA82150>]}
+[0m17:17:43.251397 [debug] [MainThread]: Flushing usage events
+[0m17:17:50.269466 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023D039EFA50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023D0236DCD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023D039CCC50>]}
+
+
+============================== 17:17:50.276462 | c84bede2-2010-4ffb-b6b9-b282db8afebd ==============================
+[0m17:17:50.276462 [info ] [MainThread]: Running with dbt=1.7.18
+[0m17:17:50.277461 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Hasan\\.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt init', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:18:36.266715 [debug] [MainThread]: Starter project path: E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\include\starter_project
+[0m17:18:36.286703 [info ] [MainThread]: 
+Your new dbt project "sales_data_transformation" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:18:36.287701 [info ] [MainThread]: Setting up your profile.
+[0m17:18:36.288787 [error] [MainThread]: Encountered an error:
+'charmap' codec can't decode byte 0x8d in position 313: character maps to <undefined>
+[0m17:18:36.293787 [error] [MainThread]: Traceback (most recent call last):
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\cli\main.py", line 516, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 344, in run
+    self.setup_profile(profile_name)
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 250, in setup_profile
+    if not self.check_if_can_write_profile(profile_name=profile_name):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\dbt\task\init.py", line 211, in check_if_can_write_profile
+    profiles = yaml.safe_load(f) or {}
+               ^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\__init__.py", line 79, in load
+    loader = Loader(stream)
+             ^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\loader.py", line 34, in __init__
+    Reader.__init__(self, stream)
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 85, in __init__
+    self.determine_encoding()
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 124, in determine_encoding
+    self.update_raw()
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\site-packages\yaml\reader.py", line 178, in update_raw
+    data = self.stream.read(size)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\installedSoftware\anaconda_2\envs\ecommerce_project\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x8d in position 313: character maps to <undefined>
+
+[0m17:18:36.295785 [debug] [MainThread]: Command `dbt init` failed at 17:18:36.295785 after 46.12 seconds
+[0m17:18:36.296787 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023D0347FBD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023D033FBF90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023D7CDEAC10>]}
+[0m17:18:36.297786 [debug] [MainThread]: Flushing usage events
+[0m17:18:50.896676 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000149023C7650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000149023C6810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000149023C4AD0>]}
+
+
+============================== 17:18:50.902809 | 388ad63a-909e-4c2e-ad31-9b74947903e1 ==============================
+[0m17:18:50.902809 [info ] [MainThread]: Running with dbt=1.7.18
+[0m17:18:50.904019 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Hasan\\.dbt', 'log_path': 'logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt init', 'send_anonymous_usage_stats': 'True'}
+[0m17:19:31.634056 [info ] [MainThread]: A project called sales_data_transformation already exists here.
+[0m17:19:31.635808 [debug] [MainThread]: Command `dbt init` succeeded at 17:19:31.635808 after 40.84 seconds
+[0m17:19:31.636807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014902409950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001490240BD50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014901E8C150>]}
+[0m17:19:31.637806 [debug] [MainThread]: Flushing usage events
+[0m17:26:14.845948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D63CB9850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D63CE1010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D63CE29D0>]}
+
+
+============================== 17:26:14.851946 | 160ecc6e-2a87-4f6d-a8bf-6b5e5a0a7d08 ==============================
+[0m17:26:14.851946 [info ] [MainThread]: Running with dbt=1.7.18
+[0m17:26:14.852943 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Hasan\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt debug', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m17:26:14.854943 [info ] [MainThread]: dbt version: 1.7.18
+[0m17:26:14.855437 [info ] [MainThread]: python version: 3.11.10
+[0m17:26:14.856441 [info ] [MainThread]: python path: E:\installedSoftware\anaconda_2\envs\ecommerce_project\python.exe
+[0m17:26:14.857440 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m17:26:14.964258 [info ] [MainThread]: Using profiles dir at C:\Users\Hasan\.dbt
+[0m17:26:14.965256 [info ] [MainThread]: Using profiles.yml file at C:\Users\Hasan\.dbt\profiles.yml
+[0m17:26:14.966164 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Hasan\OneDrive\Desktop\dbt-mysql\dbt_project.yml
+[0m17:26:14.968167 [info ] [MainThread]: adapter type: mysql
+[0m17:26:14.969167 [info ] [MainThread]: adapter version: 1.7.0
+[0m17:26:14.969167 [info ] [MainThread]: Configuration:
+[0m17:26:14.970166 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m17:26:14.971166 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m17:26:14.972163 [info ] [MainThread]: Required dependencies:
+[0m17:26:14.973164 [debug] [MainThread]: Executing "git --help"
+[0m17:26:15.022868 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:26:15.023868 [debug] [MainThread]: STDERR: "b''"
+[0m17:26:15.024868 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:26:15.025867 [info ] [MainThread]: Connection:
+[0m17:26:15.027153 [info ] [MainThread]:   server: localhost
+[0m17:26:15.028157 [info ] [MainThread]:   unix_socket: None
+[0m17:26:15.029608 [info ] [MainThread]:   port: 3306
+[0m17:26:15.030542 [info ] [MainThread]:   database: None
+[0m17:26:15.031404 [info ] [MainThread]:   schema: ecommerce
+[0m17:26:15.032406 [info ] [MainThread]:   user: root
+[0m17:26:15.033405 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m17:26:15.034404 [debug] [MainThread]: Acquiring new mysql connection 'debug'
+[0m17:26:15.035405 [debug] [MainThread]: Using mysql connection "debug"
+[0m17:26:15.035405 [debug] [MainThread]: On debug: select 1 as id
+[0m17:26:15.036405 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:26:15.730989 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:26:15.732992 [debug] [MainThread]: On debug: Close
+[0m17:26:15.746240 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m17:26:15.747372 [info ] [MainThread]: [31m1 check failed:[0m
+[0m17:26:15.748376 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\Hasan\OneDrive\Desktop\dbt-mysql\dbt_project.yml> not found
+
+[0m17:26:15.751361 [debug] [MainThread]: Command `dbt debug` failed at 17:26:15.751361 after 1.00 seconds
+[0m17:26:15.752361 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m17:26:15.753359 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D638E6150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D636F03D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D61367A50>]}
+[0m17:26:15.754359 [debug] [MainThread]: Flushing usage events
+[0m17:26:34.496489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F9C30FD450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F9C30FC750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F9C30FCC10>]}
+
+
+============================== 17:26:34.503485 | 0e0b8557-50f0-4d62-a77d-b9fdb577ec9d ==============================
+[0m17:26:34.503485 [info ] [MainThread]: Running with dbt=1.7.18
+[0m17:26:34.504483 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Hasan\\.dbt', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:26:34.505484 [info ] [MainThread]: dbt version: 1.7.18
+[0m17:26:34.506483 [info ] [MainThread]: python version: 3.11.10
+[0m17:26:34.507482 [info ] [MainThread]: python path: E:\installedSoftware\anaconda_2\envs\ecommerce_project\python.exe
+[0m17:26:34.508481 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m17:26:34.614416 [info ] [MainThread]: Using profiles dir at C:\Users\Hasan\.dbt
+[0m17:26:34.615414 [info ] [MainThread]: Using profiles.yml file at C:\Users\Hasan\.dbt\profiles.yml
+[0m17:26:34.616414 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Hasan\OneDrive\Desktop\dbt-mysql\dbt_project.yml
+[0m17:26:34.618414 [info ] [MainThread]: adapter type: mysql
+[0m17:26:34.619412 [info ] [MainThread]: adapter version: 1.7.0
+[0m17:26:34.620412 [info ] [MainThread]: Configuration:
+[0m17:26:34.621411 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m17:26:34.621411 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m17:26:34.622411 [info ] [MainThread]: Required dependencies:
+[0m17:26:34.623410 [debug] [MainThread]: Executing "git --help"
+[0m17:26:34.666383 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:26:34.667383 [debug] [MainThread]: STDERR: "b''"
+[0m17:26:34.668382 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:26:34.669380 [info ] [MainThread]: Connection:
+[0m17:26:34.670380 [info ] [MainThread]:   server: localhost
+[0m17:26:34.671382 [info ] [MainThread]:   unix_socket: None
+[0m17:26:34.672291 [info ] [MainThread]:   port: 3306
+[0m17:26:34.673296 [info ] [MainThread]:   database: None
+[0m17:26:34.674295 [info ] [MainThread]:   schema: ecommerce
+[0m17:26:34.675295 [info ] [MainThread]:   user: root
+[0m17:26:34.676294 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m17:26:34.677293 [debug] [MainThread]: Acquiring new mysql connection 'debug'
+[0m17:26:34.678292 [debug] [MainThread]: Using mysql connection "debug"
+[0m17:26:34.678292 [debug] [MainThread]: On debug: select 1 as id
+[0m17:26:34.679292 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:26:35.015084 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m17:26:35.017083 [debug] [MainThread]: On debug: Close
+[0m17:26:35.019081 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m17:26:35.020080 [info ] [MainThread]: [31m1 check failed:[0m
+[0m17:26:35.021081 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\Hasan\OneDrive\Desktop\dbt-mysql\dbt_project.yml> not found
+
+[0m17:26:35.024432 [debug] [MainThread]: Command `dbt debug` failed at 17:26:35.024432 after 0.62 seconds
+[0m17:26:35.025432 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m17:26:35.026431 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F9C31250D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F9C1F60D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F9C31604D0>]}
+[0m17:26:35.026431 [debug] [MainThread]: Flushing usage events

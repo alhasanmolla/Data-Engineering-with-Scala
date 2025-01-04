@@ -1,0 +1,8 @@
+name: 'sales_data_transformation'
+version: '1.0'
+profile: 'ecommerce_project'  # Your profile name
+model-paths: ["models"]  # Updated from source-paths to model-paths
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"
