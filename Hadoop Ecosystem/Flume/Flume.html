@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flume কমান্ডগুলোর তালিকা ও ব্যাখ্যা</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h2 {
+            color: #34495e;
+        }
+        pre {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flume কমান্ডগুলোর তালিকা ও ব্যাখ্যা</h1>
+    
+    <h2>১. flume-ng agent</h2>
+    <p><strong>কাজ:</strong> একটি Flume এজেন্ট চালায়। Flume এজেন্ট হলো একটি স্বাধীন প্রক্রিয়া যা ডেটা সংগ্রহ এবং পরিবহন করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>flume-ng agent --conf &lt;conf_directory&gt; --conf-file &lt;flume_conf_file&gt; --name &lt;agent_name&gt; -Dflume.root.logger=&lt;log_level&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>flume-ng agent --conf /usr/local/flume/conf --conf-file /usr/local/flume/conf/flume.conf --name agent1 -Dflume.root.logger=INFO,console</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি flume.conf কনফিগারেশন ফাইল ব্যবহার করে agent1 নামের একটি Flume এজেন্ট চালায়。</p>
+
+    <h2>২. flume-ng version</h2>
+    <p><strong>কাজ:</strong> Flume-এর বর্তমান সংস্করণ প্রদর্শন করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>flume-ng version</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>flume-ng version</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এই কমান্ডটি Flume-এর ইনস্টল করা সংস্করণ দেখাবে।</p>
+
+    <h2>৩. flume-ng help</h2>
+    <p><strong>কাজ:</strong> Flume-এর সাহায্য তথ্য দেখায়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>flume-ng help</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>flume-ng help</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি Flume-এর কমান্ড এবং তাদের ব্যবহারের একটি সংক্ষিপ্ত বিবরণ প্রদান করে।</p>
+
+    <h2>৪. flume-ng avro-client</h2>
+    <p><strong>কাজ:</strong> Avro ডেটা প্রেরণের জন্য একটি ক্লায়েন্ট তৈরি করে। এটি একটি Avro সোর্সে ডেটা পাঠাতে ব্যবহৃত হয়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>flume-ng avro-client --host &lt;host&gt; --port &lt;port&gt; --data &lt;data&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>flume-ng avro-client --host localhost --port 4141 --data "This is a test log message"</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি Avro সোর্সে "This is a test log message" পাঠাবে।</p>
+
+    <h2>৫. flume-ng avro-test</h2>
+    <p><strong>কাজ:</strong> Avro সোর্সের জন্য একটি টেস্ট ক্লায়েন্ট চালায়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>flume-ng avro-test --host &lt;host&gt; --port &lt;port&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>flume-ng avro-test --host localhost --port 4141</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি একটি Avro সোর্সে ডেটা পাঠানোর জন্য পরীক্ষা করে।</p>
+
+    <h2>৬. flume-ng netcat</h2>
+    <p><strong>কাজ:</strong> Flume Netcat সোর্সে ডেটা পাঠায়। এটি সাধারণত নেটওয়ার্ক ডেটা প্রেরণের জন্য ব্যবহৃত হয়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>flume-ng netcat &lt;host&gt; &lt;port&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>flume-ng netcat localhost 44444</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি localhost এবং পোর্ট 44444-এ ডেটা পাঠাবে।</p>
+
+    <h2>৭. flume-ng configuration-check</h2>
+    <p><strong>কাজ:</strong> Flume কনফিগারেশন ফাইল যাচাই করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>flume-ng configuration-check --conf &lt;conf_directory&gt; --conf-file &lt;flume_conf_file&gt; --name &lt;agent_name&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>flume-ng configuration-check --conf /usr/local/flume/conf --conf-file /usr/local/flume/conf/flume.conf --name agent1</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি flume.conf ফাইলের কনফিগারেশন সঠিক আছে কিনা তা যাচাই করবে।</p>
+
+    <h2>৮. flume-ng dump</h2>
+    <p><strong>কাজ:</strong> Flume কনফিগারেশন ফাইলের সমস্ত ডেটা আউটপুট করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>flume-ng dump --conf-file &lt;flume_conf_file&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>flume-ng dump --conf-file /usr/local/flume/conf/flume.conf</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি Flume কনফিগারেশন ফাইলের ডেটা প্রিন্ট করবে।</p>
+
+    <h2>৯. flume-ng logs</h2>
+    <p><strong>কাজ:</strong> Flume এজেন্টের লগ ফাইলগুলি পর্যালোচনা করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>flume-ng logs --name &lt;agent_name&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>flume-ng logs --name agent1</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি agent1 এর লগ ফাইলগুলির ডেটা দেখাবে।</p>
+
+    <h2>১০. flume-ng stop</h2>
+    <p><strong>কাজ:</strong> একটি চলমান Flume এজেন্ট বন্ধ করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>flume-ng stop &lt;agent_name&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>flume-ng stop agent1</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি agent1 নামে চলমান Flume এজেন্ট বন্ধ করবে।</p>
+
+    <h2>উপসংহার</h2>
+    <p>Apache Flume-এর এই কমান্ডগুলো ডেটা সংগ্রহ, স্থানান্তর, এবং পর্যবেক্ষণের জন্য ব্যবহার করা হয়। Flume কনফিগারেশন এবং এজেন্ট পরিচালনার জন্য এই কমান্ডগুলো গুরুত্বপূর্ণ। আপনি যদি আরও বিস্তারিত উদাহরণ বা ব্যাখ্যা চান, তাহলে আমাকে জানাতে পারেন।</p>
+</body>
+</html>

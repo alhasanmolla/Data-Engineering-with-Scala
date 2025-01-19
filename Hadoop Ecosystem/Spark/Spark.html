@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark কমান্ডগুলোর তালিকা ও ব্যাখ্যা</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h2 {
+            color: #34495e;
+        }
+        pre {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Spark কমান্ডগুলোর তালিকা ও ব্যাখ্যা</h1>
+    
+    <h2>১. spark-shell</h2>
+    <p><strong>কাজ:</strong> Spark শেল চালু করে যা আপনাকে Spark-এর সাথে ইন্টারেক্টিভ কাজ করতে সাহায্য করে। এটি Scala ভিত্তিক শেল যা Spark-এর জন্য ইন্টারেক্টিভ প্রোগ্রামিং পরিবেশ সরবরাহ করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>spark-shell</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এই কমান্ডটি Spark শেল চালু করবে, যেখানে আপনি Spark API-এর মাধ্যমে ডেটা প্রসেসিং করতে পারবেন। এটি আপনাকে একটি Scala REPL (Read-Eval-Print-Loop) প্রদান করে যা কোড লেখার ও পরীক্ষা করার জন্য ব্যবহৃত হয়।</p>
+
+    <h2>২. spark-submit</h2>
+    <p><strong>কাজ:</strong> Spark অ্যাপ্লিকেশন চালানোর জন্য ব্যবহৃত হয়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>spark-submit --class &lt;class_name&gt; --master &lt;master_url&gt; &lt;application_jar&gt; &lt;application_args&gt;</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি একটি Spark অ্যাপ্লিকেশন রান করার জন্য ব্যবহৃত হয়। এখানে --class স্পেসিফাই করে যে কোন ক্লাস থেকে অ্যাপ্লিকেশন শুরু হবে, --master হলো ক্লাস্টারের URL এবং অ্যাপ্লিকেশন JAR ফাইলের পাথ এবং এর আর্গুমেন্টস দেওয়া হয়।</p>
+
+    <h2>৩. spark-submit --help</h2>
+    <p><strong>কাজ:</strong> spark-submit কমান্ডের সাহায্য পেতে ব্যবহার করা হয়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>spark-submit --help</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি আপনাকে spark-submit কমান্ড সম্পর্কিত সমস্ত অপশন এবং কনফিগারেশন দেখাবে।</p>
+
+    <h2>৪. spark-shell --help</h2>
+    <p><strong>কাজ:</strong> spark-shell কমান্ডের সাহায্য পেতে ব্যবহার করা হয়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>spark-shell --help</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এই কমান্ডটি spark-shell কমান্ডের বিস্তারিত অপশন দেখাবে।</p>
+
+    <h2>৫. spark-submit --master yarn</h2>
+    <p><strong>কাজ:</strong> YARN ক্লাস্টার ম্যানেজারে Spark অ্যাপ্লিকেশন চালানোর জন্য ব্যবহৃত হয়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>spark-submit --master yarn &lt;application_jar&gt; &lt;application_args&gt;</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি YARN ক্লাস্টার ম্যানেজারে Spark অ্যাপ্লিকেশন রান করবে। YARN একটি ক্লাস্টার ম্যানেজার যা বড়ো ডেটা প্রসেসিংয়ের জন্য ব্যবহৃত হয়।</p>
+
+    <h2>৬. spark-submit --deploy-mode cluster</h2>
+    <p><strong>কাজ:</strong> Spark অ্যাপ্লিকেশন ক্লাস্টারে রান করার জন্য ব্যবহৃত হয় (বাইরের ক্লাস্টার নোডে)।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>spark-submit --deploy-mode cluster --master yarn &lt;application_jar&gt; &lt;application_args&gt;</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি Spark অ্যাপ্লিকেশনকে ক্লাস্টারে ডিপ্লয় করে (যখন ক্লাস্টার ম্যানেজার YARN হয়), এবং আপনার অ্যাপ্লিকেশনটি ক্লাস্টারের নোডে রান করবে।</p>
+
+    <h2>৭. spark-submit --deploy-mode client</h2>
+    <p><strong>কাজ:</strong> Spark অ্যাপ্লিকেশন ক্লায়েন্ট মোডে রান করার জন্য ব্যবহৃত হয়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>spark-submit --deploy-mode client --master yarn &lt;application_jar&gt; &lt;application_args&gt;</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এই কমান্ডটি অ্যাপ্লিকেশনকে ক্লায়েন্ট মোডে রান করবে, যেখানে প্রোগ্রামটি লোকাল মেশিনে রান হয় এবং ডাটা ক্লাস্টারের সাথে যোগাযোগ করবে।</p>
+
+    <h2>৮. spark-submit --conf &lt;key=value&gt;</h2>
+    <p><strong>কাজ:</strong> Spark কনফিগারেশন সেট করার জন্য ব্যবহৃত হয়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>spark-submit --conf spark.executor.memory=2g --master yarn &lt;application_jar&gt; &lt;application_args&gt;</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি Spark অ্যাপ্লিকেশন চালানোর সময় কনফিগারেশন সেট করতে ব্যবহৃত হয়, যেমন এক্সিকিউটরের জন্য মেমরি বরাদ্দ করা।</p>
+
+    <h2>৯. spark-submit --jars &lt;jar_file&gt;</h2>
+    <p><strong>কাজ:</strong> Spark অ্যাপ্লিকেশনের জন্য এক্সটার্নাল JAR ফাইল অ্যাড করার জন্য ব্যবহৃত হয়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>spark-submit --jars &lt;external_jar&gt; --master yarn &lt;application_jar&gt; &lt;application_args&gt;</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি Spark অ্যাপ্লিকেশন চালানোর সময় অতিরিক্ত JAR ফাইল যোগ করার জন্য ব্যবহৃত হয়। উদাহরণস্বরূপ, একটি JDBC সংযোগের জন্য JAR ফাইল যোগ করা হতে পারে।</p>
+
+    <h2>১০. spark-sql</h2>
+    <p><strong>কাজ:</strong> Spark SQL শেল চালু করে, যেখানে SQL কোয়েরি ব্যবহার করা হয়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>spark-sql</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি Spark SQL শেল চালু করবে, যেখানে আপনি SQL এর মাধ্যমে ডেটা প্রসেসিং করতে পারবেন।</p>
+
+    <h2>১১. spark-submit --files &lt;file&gt;</h2>
+    <p><strong>কাজ:</strong> Spark অ্যাপ্লিকেশনের সাথে অতিরিক্ত ফাইল পাঠানোর জন্য ব্যবহৃত হয়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>spark-submit --files &lt;file_path&gt; --master yarn &lt;application_jar&gt; &lt;application_args&gt;</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি অতিরিক্ত ফাইল অ্যাড করার জন্য ব্যবহৃত হয়, যেমন কনফিগারেশন ফাইল বা স্ক্রিপ্ট।</p>
+
+    <h2>১২. spark-submit --driver-memory</h2>
+    <p><strong>কাজ:</strong> Spark ড্রাইভার প্রক্রিয়ার জন্য মেমরি বরাদ্দ করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>spark-submit --driver-memory 4g --master yarn &lt;application_jar&gt; &lt;application_args&gt;</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি ড্রাইভার প্রক্রিয়ার জন্য নির্দিষ্ট মেমরি বরাদ্দ করবে, যেমন 4GB।</p>
+
+    <h2>১৩. spark-submit --executor-memory</h2>
+    <p><strong>কাজ:</strong> Spark এক্সিকিউটরের জন্য মেমরি বরাদ্দ করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>spark-submit --executor-memory 4g --master yarn &lt;application_jar&gt; &lt;application_args&gt;</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি Spark এক্সিকিউটরের জন্য নির্দিষ্ট মেমরি বরাদ্দ করবে, যেমন 4GB।</p>
+
+    <h2>১৪. spark-submit --num-executors</h2>
+    <p><strong>কাজ:</strong> Spark অ্যাপ্লিকেশনের জন্য এক্সিকিউটরের সংখ্যা নির্ধারণ করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>spark-submit --num-executors 10 --master yarn &lt;application_jar&gt; &lt;application_args&gt;</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি Spark অ্যাপ্লিকেশন চলানোর সময় এক্সিকিউটরের সংখ্যা নির্ধারণ করে, যেমন 10টি এক্সিকিউটর।</p>
+
+    <h2>উপসংহার</h2>
+    <p>Spark কমান্ডগুলি মূলত অ্যাপ্লিকেশন রান, কনফিগারেশন, এবং পরিবেশ নির্ধারণের জন্য ব্যবহৃত হয়। এই কমান্ডগুলো Spark-এর ক্ষমতাশালী এবং নমনীয় প্রক্রিয়াকরণ ক্ষমতা ব্যবহার করতে সাহায্য করে, বিশেষ করে বৃহৎ ডেটা সেটের প্রসেসিংয়ের জন্য।</p>
+</body>
+</html>

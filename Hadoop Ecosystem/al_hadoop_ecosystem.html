@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadoop Ecosystem Tools</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            color: #007bff;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .tool {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .tool h3 {
+            color: #007bff;
+        }
+        .tool p {
+            color: #343a40;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hadoop Ecosystem Tools</h1>
+    
+    <div class="tool">
+        <h2>1. HDFS (Hadoop Distributed File System)</h2>
+        <h3>কাজ:</h3>
+        <p>HDFS একটি ডিসট্রিবিউটেড ফাইল সিস্টেম যা Hadoop ক্লাস্টারে ডেটা সংরক্ষণ এবং অ্যাক্সেস করতে ব্যবহৃত হয়। এটি ডেটা পার্টিশন করে, ক্লাস্টার জুড়ে ডিস্ট্রিবিউটেড রাখে এবং ব্যাকআপও সরবরাহ করে।</p>
+        <h3>ব্যবহার:</h3>
+        <ul>
+            <li><code>hadoop fs -ls /</code>: ফাইল সিস্টেমের বিষয়বস্তু দেখতে সাহায্য করে।</li>
+            <li><code>hadoop fs -put <local_file> <hdfs_path></code>: লোকাল ফাইল HDFS-এ আপলোড করতে ব্যবহার হয়।</li>
+            <li><code>hadoop fs -get <hdfs_path> <local_dir></code>: HDFS থেকে লোকাল ডিরেক্টরিতে ফাইল ডাউনলোড করতে ব্যবহার হয়।</li>
+            <li><code>hadoop fs -cat <hdfs_file></code>: HDFS ফাইলের বিষয়বস্তু দেখতে সাহায্য করে।</li>
+            <li><code>hadoop fs -rm <hdfs_file></code>: HDFS থেকে ফাইল মুছে ফেলে।</li>
+            <li><code>hadoop fs -mkdir <hdfs_dir></code>: HDFS-এ একটি নতুন ডিরেক্টরি তৈরি করতে ব্যবহৃত হয়।</li>
+            <li><code>hadoop fs -cp <source> <destination></code>: HDFS-এর মধ্যে ফাইল কপি করতে ব্যবহার হয়।</li>
+            <li><code>hadoop fs -mv <source> <destination></code>: HDFS-এ ফাইল স্থানান্তর করতে ব্যবহার হয়।</li>
+            <li><code>hadoop fs -du <hdfs_path></code>: HDFS পাথের ডিস্ক ব্যবহার পরিমাপ করতে ব্যবহৃত হয়।</li>
+            <li><code>hadoop fs -tail <hdfs_file></code>: HDFS ফাইলের শেষের কিছু অংশ দেখতে সাহায্য করে।</li>
+            <li><code>hadoop fs -stat <hdfs_path></code>: ফাইলের মেটাডেটা দেখতে সাহায্য করে।</li>
+        </ul>
+    </div>
+
+    <div class="tool">
+        <h2>2. Hive</h2>
+        <h3>কাজ:</h3>
+        <p>Hive একটি ডেটাবেস সফটওয়্যার যা SQL-এর মতো সিনট্যাক্স ব্যবহার করে ডেটা বিশ্লেষণ করার জন্য ব্যবহৃত হয়। এটি ডেটাকে টেবিলের আকারে সঞ্চিত করে এবং ডেটা প্রসেসিং এর জন্য MapReduce এর পিছনে কাজ করে।</p>
+        <h3>ব্যবহার:</h3>
+        <ul>
+            <li><code>CREATE DATABASE <db_name>;</code>: একটি নতুন ডাটাবেস তৈরি করতে ব্যবহৃত হয়।</li>
+            <li><code>SHOW DATABASES;</code>: Hive-এর সমস্ত ডাটাবেস দেখতে সাহায্য করে।</li>
+            <li><code>USE <db_name>;</code>: নির্দিষ্ট ডাটাবেস নির্বাচন করতে ব্যবহৃত হয়।</li>
+            <li><code>CREATE TABLE <table_name> (<column_name> <data_type>, ...);</code>: একটি নতুন টেবিল তৈরি করতে ব্যবহৃত হয়।</li>
+            <li><code>SHOW TABLES;</code>: Hive ডাটাবেসের সমস্ত টেবিল দেখতে ব্যবহৃত হয়।</li>
+            <li><code>DESCRIBE <table_name>;</code>: টেবিলের কাঠামো দেখতে ব্যবহৃত হয়।</li>
+            <li><code>SELECT * FROM <table_name>;</code>: একটি টেবিলের সমস্ত ডেটা দেখতে ব্যবহৃত হয়।</li>
+            <li><code>LOAD DATA INPATH '<hdfs_path>' INTO TABLE <table_name>;</code>: HDFS থেকে ডেটা লোড করতে ব্যবহৃত হয়।</li>
+            <li><code>INSERT INTO TABLE <table_name> VALUES (...);</code>: টেবিলে ডেটা ইনসার্ট করতে ব্যবহৃত হয়।</li>
+            <li><code>SELECT COUNT(*) FROM <table_name>;</code>: টেবিলের মোট রেকর্ড গোনার জন্য ব্যবহৃত হয়।</li>
+            <li><code>ALTER TABLE <table_name> ADD COLUMNS (<column_name> <data_type>);</code>: টেবিলের নতুন কলাম যোগ করতে ব্যবহৃত হয়।</li>
+            <li><code>DROP TABLE <table_name>;</code>: একটি টেবিল মুছে ফেলতে ব্যবহৃত হয়।</li>
+            <li><code>SHOW PARTITIONS <table_name>;</code>: পার্টিশন দেখানোর জন্য ব্যবহৃত হয়।</li>
+            <li><code>SELECT DISTINCT <column_name> FROM <table_name>;</code>: ডিস্টিংক্ট মান গুলি নির্বাচন করতে ব্যবহৃত হয়।</li>
+        </ul>
+    </div>
+
+    <div class="tool">
+        <h2>3. Sqoop</h2>
+        <h3>কাজ:</h3>
+        <p>Sqoop একটি টুল যা রিলেশনাল ডেটাবেস থেকে Hadoop-এর মধ্যে ডেটা ইম্পোর্ট এবং এক্সপোর্ট করার জন্য ব্যবহৃত হয়।</p>
+        <h3>ব্যবহার:</h3>
+        <ul>
+            <li><code>sqoop import --connect <jdbc_url> --table <table_name> --target-dir <hdfs_path></code>: রিলেশনাল ডেটাবেস থেকে HDFS-এ ডেটা ইম্পোর্ট করতে ব্যবহৃত হয়।</li>
+            <li><code>sqoop export --connect <jdbc_url> --table <table_name> --export-dir <hdfs_path></code>: HDFS থেকে রিলেশনাল ডেটাবেসে ডেটা এক্সপোর্ট করতে ব্যবহৃত হয়।</li>
+            <li><code>sqoop list-databases --connect <jdbc_url></code>: সমস্ত ডাটাবেসের তালিকা দেখানোর জন্য ব্যবহৃত হয়।</li>
+            <li><code>sqoop list-tables --connect <jdbc_url> --database <db_name></code>: একটি নির্দিষ্ট ডাটাবেসের টেবিলগুলি দেখতে ব্যবহৃত হয়।</li>
+            <li><code>sqoop eval --connect <jdbc_url> --query <query></code>: SQL কোয়েরি এক্সিকিউট করতে ব্যবহৃত হয়।</li>
+            <li><code>sqoop create-hive-table --connect <jdbc_url> --table <table_name> --hive-table <hive_table_name></code>: Hive-এ একটি টেবিল তৈরি করতে ব্যবহৃত হয়।</li>
+        </ul>
+    </div>
+
+    <div class="tool">
+        <h2>4. Flume</h2>
+        <h3>কাজ:</h3>
+        <p>Flume একটি ডিস্ট্রিবিউটেড, ফ্লেক্সিবল এবং নিরাপদ ডেটা সংগ্রহের টুল যা লগ ডেটা সংগ্রহ এবং HDFS বা অন্যান্য ডেটা স্টোরেজ সিস্টেমে পাঠাতে ব্যবহৃত হয়।</p>
+        <h3>ব্যবহার:</h3>
+        <ul>
+            <li><code>flume-ng agent --conf <conf_dir> --conf-file <config_file> --name <agent_name></code>: Flume এজেন্ট চালাতে ব্যবহৃত হয়।</li>
+            <li><code>flume-ng start <agent_name></code>: Flume এজেন্ট চালু করার জন্য ব্যবহৃত হয়।</li>
+            <li><code>flume-ng stop <agent_name></code>: Flume এজেন্ট বন্ধ করতে ব্যবহৃত হয়।</li>
+            <li><code>flume-ng status <agent_name></code>: Flume এজেন্টের স্ট্যাটাস দেখার জন্য ব্যবহৃত হয়।</li>
+            <li><code>flume-ng run <config_file></code>: Flume কনফিগারেশন চালাতে ব্যবহৃত হয়।</li>
+        </ul>
+    </div>
+
+    <div class="tool">
+        <h2>5. Spark</h2>
+        <h3>কাজ:</h3>
+        <p>Spark একটি ফাস্ট এবং জেনেরেল পারপাস ক্লাস্টার কম্পিউটিং সিস্টেম যা বিশাল পরিমাণ ডেটা বিশ্লেষণ এবং প্রসেসিং করতে ব্যবহৃত হয়। এটি দ্রুত এবং মেমরি-ভিত্তিক প্রসেসিং করার জন্য বিখ্যাত।</p>
+        <h3>ব্যবহার:</h3>
+        <ul>
+            <li><code>spark-submit --class <class_name> --master <master_url> <application_jar> <application_args></code>: Spark অ্যাপ্লিকেশন চালাতে ব্যবহৃত হয়।</li>
+            <li><code>spark-shell</code>: Spark এর ইন্টারেক্টিভ শেল চালাতে ব্যবহৃত হয়।</li>
+            <li><code>spark-submit --deploy-mode cluster --conf <config_file> <application_jar></code>: ক্লাস্টারে Spark অ্যাপ্লিকেশন চালানোর জন্য ব্যবহৃত হয়।</li>
+            <li><code>spark-submit --driver-memory <memory_size> --executor-memory <memory_size> <application_jar></code>: ড্রাইভার এবং এক্সিকিউটর মেমরি কনফিগার করতে ব্যবহৃত হয়।</li>
+        </ul>
+    </div>
+
+</body>
+</html>

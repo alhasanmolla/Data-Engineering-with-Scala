@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sqoop কমান্ডগুলোর তালিকা ও ব্যাখ্যা</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h2 {
+            color: #34495e;
+        }
+        pre {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sqoop কমান্ডগুলোর তালিকা ও ব্যাখ্যা</h1>
+    
+    <h2>১. sqoop import</h2>
+    <p><strong>কাজ:</strong> RDBMS থেকে HDFS-এ ডেটা আমদানি করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>sqoop import --connect &lt;jdbc_connection_string&gt; --username &lt;db_user&gt; --password &lt;db_password&gt; --table &lt;table_name&gt; --target-dir &lt;hdfs_directory&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>sqoop import --connect jdbc:mysql://localhost:3306/sales_db --username root --password root --table customers --target-dir /user/hdfs/customers_data</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এই কমান্ডটি MySQL ডেটাবেসের customers টেবিল থেকে ডেটা আমদানি করে HDFS-এ /user/hdfs/customers_data ডিরেক্টরিতে সংরক্ষণ করে।</p>
+
+    <h2>২. sqoop import-all-tables</h2>
+    <p><strong>কাজ:</strong> একটি ডেটাবেসের সমস্ত টেবিল HDFS-এ আমদানি করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>sqoop import-all-tables --connect &lt;jdbc_connection_string&gt; --username &lt;db_user&gt; --password &lt;db_password&gt; --warehouse-dir &lt;hdfs_directory&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>sqoop import-all-tables --connect jdbc:mysql://localhost:3306/sales_db --username root --password root --warehouse-dir /user/hdfs/sales_data</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এই কমান্ড sales_db ডেটাবেসের সমস্ত টেবিলকে /user/hdfs/sales_data-এ আমদানি করে।</p>
+
+    <h2>৩. sqoop export</h2>
+    <p><strong>কাজ:</strong> HDFS থেকে ডেটা RDBMS-এ রপ্তানি করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>sqoop export --connect &lt;jdbc_connection_string&gt; --username &lt;db_user&gt; --password &lt;db_password&gt; --table &lt;table_name&gt; --export-dir &lt;hdfs_directory&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>sqoop export --connect jdbc:mysql://localhost:3306/sales_db --username root --password root --table orders --export-dir /user/hdfs/orders_data</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এই কমান্ড /user/hdfs/orders_data HDFS ডিরেক্টরির ডেটা MySQL-এর orders টেবিলে রপ্তানি করে।</p>
+
+    <h2>৪. sqoop list-databases</h2>
+    <p><strong>কাজ:</strong> একটি সার্ভারে উপলব্ধ সমস্ত ডেটাবেসের তালিকা দেখায়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>sqoop list-databases --connect &lt;jdbc_connection_string&gt; --username &lt;db_user&gt; --password &lt;db_password&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>sqoop list-databases --connect jdbc:mysql://localhost:3306 --username root --password root</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি MySQL সার্ভারের সমস্ত ডেটাবেসের তালিকা প্রদর্শন করবে।</p>
+
+    <h2>৫. sqoop list-tables</h2>
+    <p><strong>কাজ:</strong> একটি ডেটাবেসের সমস্ত টেবিলের তালিকা দেখায়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>sqoop list-tables --connect &lt;jdbc_connection_string&gt; --username &lt;db_user&gt; --password &lt;db_password&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>sqoop list-tables --connect jdbc:mysql://localhost:3306/sales_db --username root --password root</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি sales_db ডেটাবেসের সমস্ত টেবিলের তালিকা দেখাবে।</p>
+
+    <h2>৬. sqoop eval</h2>
+    <p><strong>কাজ:</strong> SQL কমান্ড বা কুয়েরি চালায় এবং ফলাফল দেখায়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>sqoop eval --connect &lt;jdbc_connection_string&gt; --username &lt;db_user&gt; --password &lt;db_password&gt; --query "&lt;sql_query&gt;"</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>sqoop eval --connect jdbc:mysql://localhost:3306/sales_db --username root --password root --query "SELECT * FROM customers LIMIT 10"</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি customers টেবিল থেকে প্রথম ১০টি রেকর্ড দেখাবে।</p>
+
+    <h2>৭. sqoop job</h2>
+    <p><strong>কাজ:</strong> পুনরাবৃত্তিমূলক কাজ সংরক্ষণ এবং চালানোর জন্য ব্যবহৃত হয়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>জব তৈরি: sqoop job --create &lt;job_name&gt; --import --connect &lt;jdbc_connection_string&gt; --username &lt;db_user&gt; --password &lt;db_password&gt; --table &lt;table_name&gt; --target-dir &lt;hdfs_directory&gt;</code></pre>
+    <pre><code>জব চালানো: sqoop job --exec &lt;job_name&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>sqoop job --create import_customers --import --connect jdbc:mysql://localhost:3306/sales_db --username root --password root --table customers --target-dir /user/hdfs/customers_data</code></pre>
+    <pre><code>sqoop job --exec import_customers</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> প্রথম কমান্ড একটি কাজ তৈরি করে যা customers টেবিল আমদানি করবে, এবং দ্বিতীয় কমান্ড এটি চালায়।</p>
+
+    <h2>৮. sqoop merge</h2>
+    <p><strong>কাজ:</strong> দুটি ডেটাসেট মিশ্রিত করে একটি নতুন ডেটাসেট তৈরি করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>sqoop merge --new-data &lt;new_data_dir&gt; --onto &lt;existing_data_dir&gt; --target-dir &lt;output_dir&gt; --jar-file &lt;jar_file&gt; --class-name &lt;class_name&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>sqoop merge --new-data /user/hdfs/new_data --onto /user/hdfs/existing_data --target-dir /user/hdfs/merged_data</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি নতুন ডেটাকে বিদ্যমান ডেটার সাথে মিশ্রিত করে /user/hdfs/merged_data-এ সংরক্ষণ করে।</p>
+
+    <h2>৯. sqoop codegen</h2>
+    <p><strong>কাজ:</strong> ডেটাবেস টেবিলের জন্য Java কোড জেনারেট করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>sqoop codegen --connect &lt;jdbc_connection_string&gt; --username &lt;db_user&gt; --password &lt;db_password&gt; --table &lt;table_name&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>sqoop codegen --connect jdbc:mysql://localhost:3306/sales_db --username root --password root --table customers</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি customers টেবিলের জন্য Java কোড জেনারেট করবে।</p>
+
+    <h2>১০. sqoop validate</h2>
+    <p><strong>কাজ:</strong> আমদানিকৃত ডেটার যাচাই করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>sqoop validate --connect &lt;jdbc_connection_string&gt; --username &lt;db_user&gt; --password &lt;db_password&gt; --table &lt;table_name&gt; --target-dir &lt;hdfs_directory&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>sqoop validate --connect jdbc:mysql://localhost:3306/sales_db --username root --password root --table customers --target-dir /user/hdfs/customers_data</code></pre>
+    <p><strong>ব্যাখ্যা:</strong> এটি customers টেবিল থেকে আমদানিকৃত ডেটার সঠিকতা যাচাই করবে।</p>
+
+    <h2>উপসংহার</h2>
+    <p>Sqoop-এর এই কমান্ডগুলো ডেটা ট্রান্সফারের কাজকে সহজ করে। আপনি যদি আরও ব্যাখ্যা বা নির্দিষ্ট উদাহরণ চান, তাহলে আমাকে জানাতে পারেন।</p>
+</body>
+</html>

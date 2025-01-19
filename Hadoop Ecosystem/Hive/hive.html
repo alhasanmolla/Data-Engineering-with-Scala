@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hive কমান্ডগুলোর তালিকা ও ব্যাখ্যা</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h2 {
+            color: #34495e;
+        }
+        pre {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hive কমান্ডগুলোর তালিকা ও ব্যাখ্যা</h1>
+    
+    <h2>১. CREATE DATABASE</h2>
+    <p><strong>কাজ:</strong> নতুন একটি ডেটাবেস তৈরি করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>CREATE DATABASE &lt;database_name&gt;;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>CREATE DATABASE sales_db;</code></pre>
+
+    <h2>২. SHOW DATABASES</h2>
+    <p><strong>কাজ:</strong> সমস্ত ডেটাবেসের তালিকা দেখায়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>SHOW DATABASES;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>SHOW DATABASES;</code></pre>
+
+    <h2>৩. USE</h2>
+    <p><strong>কাজ:</strong> একটি নির্দিষ্ট ডেটাবেস ব্যবহার করতে নির্বাচন করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>USE &lt;database_name&gt;;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>USE sales_db;</code></pre>
+
+    <h2>৪. DROP DATABASE</h2>
+    <p><strong>কাজ:</strong> একটি ডেটাবেস মুছে ফেলে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>DROP DATABASE &lt;database_name&gt; [CASCADE];</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>DROP DATABASE sales_db CASCADE;</code></pre>
+
+    <h2>৫. CREATE TABLE</h2>
+    <p><strong>কাজ:</strong> একটি নতুন টেবিল তৈরি করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>CREATE TABLE &lt;table_name&gt; (
+  column1 datatype,
+  column2 datatype,
+  ...
+);</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>CREATE TABLE employees (
+  id INT,
+  name STRING,
+  age INT,
+  department STRING
+);</code></pre>
+
+    <h2>৬. SHOW TABLES</h2>
+    <p><strong>কাজ:</strong> একটি ডেটাবেসের সমস্ত টেবিলের তালিকা দেখায়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>SHOW TABLES;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>SHOW TABLES;</code></pre>
+
+    <h2>৭. DESCRIBE</h2>
+    <p><strong>কাজ:</strong> টেবিলের কাঠামো বা স্কিমা দেখায়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>DESCRIBE &lt;table_name&gt;;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>DESCRIBE employees;</code></pre>
+
+    <h2>৮. LOAD DATA</h2>
+    <p><strong>কাজ:</strong> HDFS বা লোকাল ফাইল থেকে ডেটা লোড করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>LOAD DATA [LOCAL] INPATH '&lt;file_path&gt;' INTO TABLE &lt;table_name&gt;;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>LOAD DATA LOCAL INPATH '/home/user/employees.txt' INTO TABLE employees;</code></pre>
+
+    <h2>৯. INSERT INTO</h2>
+    <p><strong>কাজ:</strong> একটি টেবিলে ডেটা যোগ করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>INSERT INTO TABLE &lt;table_name&gt; VALUES (&lt;value1&gt;, &lt;value2&gt;, ...);</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>INSERT INTO TABLE employees VALUES (1, 'John Doe', 30, 'IT');</code></pre>
+
+    <h2>১০. SELECT</h2>
+    <p><strong>কাজ:</strong> ডেটা রিট্রিভ করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>SELECT &lt;columns&gt; FROM &lt;table_name&gt; WHERE &lt;condition&gt;;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>SELECT * FROM employees WHERE age &gt; 25;</code></pre>
+
+    <h2>১১. ALTER TABLE</h2>
+    <p><strong>কাজ:</strong> টেবিল পরিবর্তন বা সংশোধন করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>ALTER TABLE &lt;table_name&gt; ADD|REPLACE COLUMNS (...);</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>ALTER TABLE employees ADD COLUMNS (salary FLOAT);</code></pre>
+
+    <h2>১২. DROP TABLE</h2>
+    <p><strong>কাজ:</strong> একটি টেবিল মুছে ফেলে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>DROP TABLE &lt;table_name&gt;;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>DROP TABLE employees;</code></pre>
+
+    <h2>১৩. TRUNCATE TABLE</h2>
+    <p><strong>কাজ:</strong> একটি টেবিলের সমস্ত ডেটা মুছে ফেলে, কিন্তু টেবিল বজায় থাকে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>TRUNCATE TABLE &lt;table_name&gt;;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>TRUNCATE TABLE employees;</code></pre>
+
+    <h2>১৪. CREATE VIEW</h2>
+    <p><strong>কাজ:</strong> একটি ভার্চুয়াল টেবিল বা ভিউ তৈরি করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>CREATE VIEW &lt;view_name&gt; AS SELECT &lt;columns&gt; FROM &lt;table_name&gt; WHERE &lt;condition&gt;;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>CREATE VIEW young_employees AS SELECT * FROM employees WHERE age &lt; 30;</code></pre>
+
+    <h2>১৫. DROP VIEW</h2>
+    <p><strong>কাজ:</strong> একটি ভিউ মুছে ফেলে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>DROP VIEW &lt;view_name&gt;;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>DROP VIEW young_employees;</code></pre>
+
+    <h2>১৬. CREATE EXTERNAL TABLE</h2>
+    <p><strong>কাজ:</strong> HDFS-এ সংরক্ষিত ডেটার জন্য একটি এক্সটার্নাল টেবিল তৈরি করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>CREATE EXTERNAL TABLE &lt;table_name&gt; (
+  column1 datatype,
+  column2 datatype,
+  ...
+) STORED AS &lt;file_format&gt; LOCATION '&lt;hdfs_path&gt;';</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>CREATE EXTERNAL TABLE logs (
+  id INT,
+  message STRING
+) STORED AS TEXTFILE LOCATION '/user/logs';</code></pre>
+
+    <h2>১৭. MSCK REPAIR TABLE</h2>
+    <p><strong>কাজ:</strong> Partitioned টেবিল আপডেট করে নতুন পার্টিশন যোগ করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>MSCK REPAIR TABLE &lt;table_name&gt;;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>MSCK REPAIR TABLE sales_partition;</code></pre>
+
+    <h2>১৮. EXPLAIN</h2>
+    <p><strong>কাজ:</strong> একটি কুয়েরি কীভাবে সম্পন্ন হবে তা বিশ্লেষণ করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>EXPLAIN &lt;query&gt;;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>EXPLAIN SELECT * FROM employees;</code></pre>
+
+    <h2>১৯. JOIN</h2>
+    <p><strong>কাজ:</strong> দুটি বা ততোধিক টেবিলের মধ্যে সম্পর্ক স্থাপন করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>SELECT &lt;columns&gt; FROM &lt;table1&gt; JOIN &lt;table2&gt; ON &lt;table1.column = table2.column&gt;;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>SELECT e.name, d.department_name
+FROM employees e
+JOIN departments d ON e.department = d.id;</code></pre>
+
+    <h2>উপসংহার</h2>
+    <p>Hive কমান্ডগুলো বড় ডেটার উপর কাজ করার জন্য SQL-স্টাইল ব্যবহার করে কার্যকর ডেটা বিশ্লেষণের সুযোগ দেয়। আপনি যদি আরো গভীর ব্যাখ্যা বা উদাহরণ চান, তাহলে আমাকে জানাতে পারেন।</p>
+</body>
+</html>

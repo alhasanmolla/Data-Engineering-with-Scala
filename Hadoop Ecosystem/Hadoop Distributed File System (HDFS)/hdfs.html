@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDFS কমান্ডগুলোর তালিকা ও ব্যাখ্যা</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h2 {
+            color: #34495e;
+        }
+        pre {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>HDFS কমান্ডগুলোর তালিকা ও ব্যাখ্যা</h1>
+    
+    <h2>১. ls</h2>
+    <p><strong>কাজ:</strong> HDFS-এ একটি ডিরেক্টরির ফাইল এবং সাব-ডিরেক্টরি তালিকা দেখায়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -ls &lt;path&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -ls /user/data</code></pre>
+
+    <h2>২. mkdir</h2>
+    <p><strong>কাজ:</strong> HDFS-এ নতুন ডিরেক্টরি তৈরি করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -mkdir &lt;directory&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -mkdir /user/newdir</code></pre>
+
+    <h2>৩. rmdir</h2>
+    <p><strong>কাজ:</strong> HDFS-এ খালি ডিরেক্টরি মুছে ফেলে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -rmdir &lt;directory&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -rmdir /user/emptydir</code></pre>
+
+    <h2>৪. put</h2>
+    <p><strong>কাজ:</strong> লোকাল ফাইল সিস্টেম থেকে HDFS-এ ফাইল আপলোড করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -put &lt;local_file_path&gt; &lt;hdfs_destination_path&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -put /home/user/file.txt /user/data</code></pre>
+
+    <h2>৫. get</h2>
+    <p><strong>কাজ:</strong> HDFS থেকে ফাইল লোকাল সিস্টেমে ডাউনলোড করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -get &lt;hdfs_file_path&gt; &lt;local_destination_path&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -get /user/data/file.txt /home/user/</code></pre>
+
+    <h2>৬. cp</h2>
+    <p><strong>কাজ:</strong> HDFS-এ ফাইল এক স্থান থেকে অন্য স্থানে কপি করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -cp &lt;source_path&gt; &lt;destination_path&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -cp /user/data/file1.txt /user/backup/</code></pre>
+
+    <h2>৭. mv</h2>
+    <p><strong>কাজ:</strong> HDFS-এ ফাইল এক স্থান থেকে অন্য স্থানে সরিয়ে দেয়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -mv &lt;source_path&gt; &lt;destination_path&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -mv /user/data/file1.txt /user/archive/</code></pre>
+
+    <h2>৮. rm</h2>
+    <p><strong>কাজ:</strong> HDFS থেকে ফাইল বা ডিরেক্টরি মুছে ফেলে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -rm &lt;path&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -rm /user/data/file1.txt</code></pre>
+
+    <h2>৯. rm -r</h2>
+    <p><strong>কাজ:</strong> HDFS-এ একটি ডিরেক্টরি ও তার সমস্ত কনটেন্ট মুছে ফেলে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -rm -r &lt;directory&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -rm -r /user/data/</code></pre>
+
+    <h2>১০. cat</h2>
+    <p><strong>কাজ:</strong> HDFS-এ ফাইলের কনটেন্ট দেখে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -cat &lt;file_path&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -cat /user/data/file1.txt</code></pre>
+
+    <h2>১১. tail</h2>
+    <p><strong>কাজ:</strong> HDFS-এ ফাইলের শেষের কয়েকটি লাইন দেখে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -tail &lt;file_path&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -tail /user/data/file1.txt</code></pre>
+
+    <h2>১২. du</h2>
+    <p><strong>কাজ:</strong> HDFS-এ ফাইল বা ডিরেক্টরির ডেটার আকার দেখায়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -du &lt;path&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -du /user/data/</code></pre>
+
+    <h2>১৩. chmod</h2>
+    <p><strong>কাজ:</strong> HDFS-এ ফাইল বা ডিরেক্টরির পারমিশন পরিবর্তন করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -chmod &lt;permissions&gt; &lt;path&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -chmod 755 /user/data/file1.txt</code></pre>
+
+    <h2>১৪. chown</h2>
+    <p><strong>কাজ:</strong> HDFS-এ ফাইল বা ডিরেক্টরির মালিক পরিবর্তন করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -chown &lt;user&gt;:&lt;group&gt; &lt;path&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -chown hadoopuser:hadoopgroup /user/data/file1.txt</code></pre>
+
+    <h2>১৫. stat</h2>
+    <p><strong>কাজ:</strong> HDFS-এ একটি ফাইলের মেটাডেটা দেখায়।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -stat &lt;path&gt;</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -stat /user/data/file1.txt</code></pre>
+
+    <h2>১৬. df</h2>
+    <p><strong>কাজ:</strong> HDFS-এ ডেটা স্টোরেজের অবস্থান এবং স্থান প্রদর্শন করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -df</code></pre>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -df</code></pre>
+
+    <h2>১৭. test</h2>
+    <p><strong>কাজ:</strong> ফাইল বা ডিরেক্টরি HDFS-এ উপস্থিত কিনা পরীক্ষা করে।</p>
+    <p><strong>সিনট্যাক্স:</strong></p>
+    <pre><code>hdfs dfs -test -[e|z|d|f] &lt;path&gt;</code></pre>
+    <p><strong>-e:</strong> পরীক্ষা করে ফাইল/ডিরেক্টরি আছে কিনা।<br>
+    <strong>-z:</strong> ফাইল খালি কিনা।<br>
+    <strong>-d:</strong> ডিরেক্টরি কিনা।<br>
+    <strong>-f:</strong> ফাইল কিনা।</p>
+    <p><strong>উদাহরণ:</strong></p>
+    <pre><code>hdfs dfs -test -e /user/data/file1.txt</code></pre>
+
+    <h2>উপসংহার</h2>
+    <p>HDFS-এর এই কমান্ডগুলো আপনাকে ডেটা পরিচালনা, ম্যানেজমেন্ট এবং বিশ্লেষণে সাহায্য করবে। যদি আপনি এগুলোর আরও গভীর ব্যাখ্যা বা উদাহরণ চান, আমাকে জানাতে পারেন।</p>
+</body>
+</html>
